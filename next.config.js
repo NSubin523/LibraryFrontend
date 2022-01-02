@@ -1,0 +1,23 @@
+module.exports={
+    images:{
+        domains: [
+            "www.google.com",
+            "www.vectorstock.com",
+            "thumbs.dreamstime.com",
+            "www.nyit.edu",
+            "media.geeksforgeeks.org",
+            "media.npr.org",
+            "thumbor.forbes.com",
+            "debrabell.com",
+            "www.elsevier.com",
+            "www.furman.edu",
+            "www.netsuite.com",
+            "www.csestack.org",
+            "isg-one.com",
+            "i.ytimg.com",
+            "library.calvin.edu",
+            "i.imgur.com",
+            "books.google.com"
+        ],
+    }
+}
