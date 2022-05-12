@@ -2,7 +2,7 @@ module.exports={
     images:{
         domains: [
             "www.google.com",
-            "www.vectorstock.com",
+            "cdn.vectorstock.com",
             "thumbs.dreamstime.com",
             "www.nyit.edu",
             "media.geeksforgeeks.org",
@@ -17,7 +17,9 @@ module.exports={
             "i.ytimg.com",
             "library.calvin.edu",
             "i.imgur.com",
-            "books.google.com"
+            "books.google.com",
+            "encrypted-tbn0.gstatic.com",
+            "images.theconversation.com"
         ],
     }
 }

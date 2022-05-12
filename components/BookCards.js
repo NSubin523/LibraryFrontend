@@ -1,7 +1,28 @@
 import { HeartIcon } from "@heroicons/react/outline"
 import { StarIcon } from "@heroicons/react/solid"
+import { db } from "../pages/Firebase"
+import {collection,addDoc} from "firebase/firestore"
 
 function BookCards({props}) {
+
+    const bookCollection = collection(db,"savedBooks")
+
+    const saveBook = async() =>{
+        await addDoc(bookCollection,{previewLink: props.volumeInfo.previewLink,
+                                     bookId:props.id,
+                                     image_url: props.volumeInfo.imageLinks.thumbnail,
+                                     book_title: props.volumeInfo.title,
+                                     subtitle: props.volumeInfo.subtitle,
+                                     rating: props.volumeInfo.averageRating,
+                                     authors: props.volumeInfo.authors,
+                                     publisher: props.volumeInfo.publisher,
+                                     published_date: props.volumeInfo.publishedDate,
+                                     page_count: props.volumeInfo.pageCount,
+                                     print_type: props.volumeInfo.printType,
+                                     language: props.volumeInfo.language
+                                     })
+    }
+
     return (
         <div className="flex ml-5 m-2 px-2 pr-4 py-7 hover:shadow-lg cursor-pointer bg-gray-100 rounded-lg border-b
                         hover:bg-opacity-80 transition duration-200 ease-out
@@ -22,7 +43,7 @@ function BookCards({props}) {
                 <div className="flex justify-between">
                     <p> Book Id: {props.id}</p>
                     <HeartIcon className="h-7 cursor-pointer"
-                               
+                               onClick={saveBook}
                     />
                 </div>
                 <h4 className="text-lg font-semibold pb-2 pr-1 lg:text-2xl">Title: {props.volumeInfo.title}</h4>
